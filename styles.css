@@ -103,7 +103,7 @@ body {
 
   /* 🔽 Replace this placeholder with your own image */
   background: url("img/charitywaterbackground.png") center/cover no-repeat;
-  
+
   color: white; /* ensures text is visible on dark images */
   position: relative;
 }
@@ -139,6 +139,35 @@ body {
 .cta-btn:hover {
   background: #ffc907;
   transform: scale(1.05);
+}
+
+/* Circular Image Holders */
+.circle-image-left,
+.circle-image-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #ffc907; /* visible frame */
+  z-index: 2;
+}
+
+.circle-image-left {
+  left: 2rem;
+}
+
+.circle-image-right {
+  right: 2rem;
+}
+
+.circle-image-left img,
+.circle-image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Info Section */
@@ -193,6 +222,10 @@ body {
   }
   .info {
     grid-template-columns: 1fr;
+  }
+  .circle-image-left,
+  .circle-image-right {
+    display: none; /* hide circles on small screens */
   }
 }
 
