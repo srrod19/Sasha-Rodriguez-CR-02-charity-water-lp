@@ -165,9 +165,9 @@ body {
 
 .circle-image-left img,
 .circle-image-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 25%;
+  height: 25%;
+  object-fit: scale-down;
 }
 
 /* Info Section */
