@@ -1,10 +1,10 @@
-/* General */
+/* General Reset */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   color: #333;
-  background: linear-gradient(to bottom, #f0f7ff, #ffffff);
-  overflow-x: hidden;
+  background: #fff;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -13,23 +13,18 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  position: sticky;
+  background: #ffffffcc;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  animation: slideDown 0.6s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1d4ed8;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.1);
+.logo img {
+  height: 40px;  /* adjust size */
+  width: auto;
 }
 
 .nav {
@@ -41,23 +36,11 @@ body {
   text-decoration: none;
   color: #333;
   font-size: 1rem;
-  position: relative;
   transition: color 0.3s ease;
 }
 
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #1d4ed8;
-  transition: width 0.3s ease;
-}
-
-.nav a:hover::after {
-  width: 100%;
+.nav a:hover {
+  color: #1d4ed8;
 }
 
 .menu-toggle {
@@ -73,11 +56,9 @@ body {
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   background: #fff;
   padding: 1rem 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  animation: fadeIn 0.5s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .mobile-menu.open {
@@ -86,44 +67,77 @@ body {
 
 /* Hero Section */
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 4rem 2rem;
-  background: #dbeafe;
-  animation: fadeInUp 1s ease;
-  /* 🔽 Replace with your hero background image */
-  /* Example: background: url('your-image.jpg') center/cover no-repeat; */
+  height: 100vh;
+  padding: 2rem;
+  background: #f0f7ff;
+  /* 🔽 Replace with your background image */
+  /* Example: background: url('hero-bg.jpg') center/cover no-repeat; */
 }
 
-.hero h2 {
-  font-size: 2.5rem;
+.hero-content h1 {
+  font-size: 3rem;
   font-weight: bold;
-  color: #1e40af;
-  animation: fadeInUp 1.2s ease;
+  color: #ffffff;
+  margin-bottom: 1rem;
 }
 
-.hero p {
-  margin: 1rem auto;
+.hero-content p {
+  font-size: 1.2rem;
   max-width: 600px;
-  font-size: 1.125rem;
-  color: #444;
-  animation: fadeInUp 1.4s ease;
+  margin: 0 auto 2rem;
+  color: #ffffff;
+}
+
+/* Hero Section Background */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 2rem;
+
+  /* 🔽 Replace this placeholder with your own image */
+  background: url("img/charitywaterbackground.png") center/cover no-repeat;
+
+  color: white; /* ensures text is visible on dark images */
+  position: relative;
+}
+
+/* Optional: add a dark overlay to improve text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* keeps text above overlay */
 }
 
 .cta-btn {
-  margin-top: 1.5rem;
   padding: 0.75rem 2rem;
-  background: #1d4ed8;
+  background: #ffc907;
   color: #fff;
   border: none;
   border-radius: 9999px;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
-  animation: fadeInUp 1.6s ease;
 }
 
 .cta-btn:hover {
-  background: #1e3a8a;
+  background: #ffc907;
   transform: scale(1.05);
 }
 
@@ -133,8 +147,7 @@ body {
   grid-template-columns: 1fr;
   gap: 2rem;
   padding: 4rem 2rem;
-  /* 🔽 Replace with an optional background image for info section */
-  /* Example: background: url('info-bg.jpg') center/cover no-repeat; */
+  text-align: center;
 }
 
 .card {
@@ -150,31 +163,24 @@ body {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.card h3 {
-  font-size: 1.5rem;
+.card h2 {
+  font-size: 1.8rem;
   color: #1d4ed8;
   margin-bottom: 1rem;
 }
 
 .card p {
-  color: #555;
   font-size: 1rem;
+  color: #555;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  color: #777;
 }
 
 /* Responsive */
