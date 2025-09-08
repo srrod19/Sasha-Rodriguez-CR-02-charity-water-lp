@@ -103,7 +103,7 @@ body {
 
   /* 🔽 Replace this placeholder with your own image */
   background: url("img/charitywaterbackground.png") center/cover no-repeat;
-
+  
   color: white; /* ensures text is visible on dark images */
   position: relative;
 }
